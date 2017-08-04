@@ -53,6 +53,6 @@ You are now curve and surface fitting data using Flask!
 
 
 If you would like to create a feature complete web site
-with django, see https://github.com/zunzun/zunzunsite3
+with django, see https://bitbucket.org/zunzuncode/zunzunsite3
 which has "function finding" and animated surface rotations
 along with SMP parallel processing for multi-core servers.
