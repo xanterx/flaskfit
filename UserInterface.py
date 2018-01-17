@@ -101,3 +101,33 @@ Example 3D data for testing
 <a href="/equationlist_3D">Link to all standard 3D equations</a>
 </td></tr></table>
 '''
+
+
+htmlForm_2D_All = '''
+<table border=1 cellpadding=20>
+<tr><td><b>All 2D Equations</b></td></tr>
+<tr><td>
+<form action="/fitter_2D_All" method="post" target=_blank>
+--- 2D Text Data ---<br>
+<textarea  rows="10" cols="45" name="textdata" wrap=off>
+Example 2D data for testing
+  X        Y
+5.357    10.376
+5.457    10.489
+5.936    11.049
+6.161    11.327 ending text is ignored
+6.697    12.054
+8.442    14.744
+9.769    17.068
+9.861    17.104
+
+</textarea>
+<br><br>
+<input type="textbox" name="count" placeholder="Enter a number">
+<br><br>
+<input type="submit" value="Submit">
+
+</form>
+<br><br>
+</td></tr></table>
+'''

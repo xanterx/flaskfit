@@ -24,6 +24,14 @@ sourceCodeFileName_3D = 'sourceCode_3D.html'
 sourceCodeFilePath_3D = os.path.join(absStaticDirPath, sourceCodeFileName_3D)
 sourceCodeURL_3D = staticDirName + '/' + sourceCodeFileName_3D
 
+def modelPlot_2D(cnt):
+	modelPlotFileName_2D = 'model_and_scatterplot_2D'+str(cnt)+'.png'
+	return os.path.join(absStaticDirPath, modelPlotFileName_2D)
+
+def modelPlURL_2D(cnt):
+	modelPlotFileName_2D = 'model_and_scatterplot_2D'+str(cnt)+'.png'
+	return staticDirName + '/' + modelPlotFileName_2D
+
 # model and scatterplot, contour
 modelPlotFileName_2D = 'model_and_scatterplot_2D.png'
 modelPlotFilePath_2D = os.path.join(absStaticDirPath, modelPlotFileName_2D)

@@ -26,6 +26,8 @@ def UserInterfaceHTML():
     # return HTML to Flask as a web page
     s = '<html><body>'
     s += '<table><tr>'
+    s += '<td>' + UserInterface.htmlForm_2D_All + '</td>'
+    s += '<td> </td>'
     s += '<td>' + UserInterface.htmlForm_2D + '</td>'
     s += '<td> </td>'
     s += '<td>' + UserInterface.htmlForm_3D + '</td>'
@@ -256,6 +258,79 @@ def equationlist_3D():
 
     return '<html><body>' + htmlToReturn + '</body></html>'
 
+@app.route('/fitter_2D_All',methods=['POST'])
+def fitter_2D():
+    count = 0
+    formTextData = request.form['textdata']
+
+    htmlToReturn = '' # build this as we progress
+    htmlToReturn += '<table border=1><tr><th>Equation Name</th><th>Equation</th><th>R2</th><th>R2 Adjusted</th><th>Coefficients</th><th>Graph</th></tr>'
+    
+    for submodule in inspect.getmembers(pyeq3.Models_2D):
+        if inspect.ismodule(submodule[1]):
+            for equationClass in inspect.getmembers(submodule[1]):
+                if inspect.isclass(equationClass[1]):
+                    for extendedVersionName in ['Default', 'Offset']:
+                        if (-1 != extendedVersionName.find('Offset')) and (equationClass[1].autoGenerateOffsetForm == False):
+                            continue
+                        equation = equationClass[1]('SSQABS', extendedVersionName)
+
+                        print(str(count) + '\t' + equation.GetDisplayName())
+
+                        htmlToReturn += '<tr>'
+                        htmlToReturn += '<td nowrap><b>2D ' + submodule[0] + '</b> : <i>' + equation.GetDisplayName() + '</i></td>'
+                        htmlToReturn += '<td nowrap>' + equation.GetDisplayHTML() + '</td>'
+                        # the name of the data here is from the form
+                        # check for functions requiring non-zero nor non-negative data such as 1/x, etc.
+                        try:
+                            pyeq3.dataConvertorService().ConvertAndSortColumnarASCII(formTextData, equation, False)
+                        except:
+                            return equation.reasonWhyDataRejected
+                        try:
+                            equation.Solve()
+                            equation.CalculateModelErrors(equation.solvedCoefficients, equation.dataCache.allDataCacheDictionary)
+                            equation.CalculateCoefficientAndFitStatistics()
+
+                            if equation.r2 == None:
+                                r = 'n/a'
+                            else:
+                                r = str(equation.r2)
+                            
+                            if equation.r2adj == None:
+                                ra = 'n/a'
+                            else:
+                                ra = str(equation.r2adj)
+
+                            equaCoff = ''
+                            for i in range(len(equation.solvedCoefficients)):                            
+                                if type(equation.sd_beta) != type(None):
+                                    equaCoff += "| %s = %-.16E, std error: %-.5E |" % (equation.GetCoefficientDesignators()[i], equation.solvedCoefficients[i], equation.sd_beta[i])
+                                else:
+                                    equaCoff += "| %s = %-.16E, std error: n/a |" % (equation.GetCoefficientDesignators()[i], equation.solvedCoefficients[i])
+                            
+                            # create graph
+                            GraphUtils.SaveModelScatterConfidence( FileInfo.modelPlot_2D(count) ,
+                                                                  equation, "Model with 95% Confidence Intervals", "X data", "Y data")         
+
+                        except:
+                            r = 'error solving'
+                            ra = 'error solving'
+                            equaCoff = 'error solving'
+
+                        htmlToReturn += '<td nowrap>' + r + '</td>'
+                        htmlToReturn += '<td nowrap>' + ra + '</td>'
+                        htmlToReturn += '<td nowrap>' + equaCoff + '</td>'
+                        htmlToReturn += '<td nowrap><a href="' + FileInfo.modelPlURL_2D(count)  + '">Link</a></td>'
+                        htmlToReturn += '</tr>'
+                        count += 1
+                        
+                        if str(count) == request.form['count']:
+                            htmlToReturn += '</table>'
+                            return '<html><body>' + htmlToReturn + '</body></html>'
+
+    htmlToReturn += '</table>'
+                        
+    return '<html><body>' + htmlToReturn + '</body></html>'
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

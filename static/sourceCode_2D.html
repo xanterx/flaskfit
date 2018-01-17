@@ -1,0 +1,290 @@
+<html><body>
+
+<b>C++</b><br><textarea rows="20" cols="85" wrap="OFF">// To the best of my knowledge this code is correct.
+// If you find any errors or problems please contact
+// me directly using zunzun@zunzun.com.
+//
+//      James
+
+
+#include <math.h>
+
+// Fitting target: lowest sum of squared absolute error
+// Fitting target value = 0.00679309502824
+
+double Peak_LorentzianPeakC_Offset_model(double x_in)
+{
+	double temp;
+	temp = 0.0;
+
+	// coefficients
+	double a = 5.8254080255880831E+02;
+	double b = 3.6511026553872156E+01;
+	double c = 1.2434983425309071E+01;
+	double Offset = 3.6521655358953700E+00;
+
+	temp = a/ (b + pow(x_in-c, 2.0));
+	temp += Offset;
+	return temp;
+}
+</textarea><br><br>
+
+<b>CSHARP</b><br><textarea rows="20" cols="85" wrap="OFF">// To the best of my knowledge this code is correct.
+// If you find any errors or problems please contact
+// me directly using zunzun@zunzun.com.
+//
+//      James
+
+
+using System;
+
+// Fitting target: lowest sum of squared absolute error
+// Fitting target value = 0.00679309502824
+
+class Peak_LorentzianPeakC_Offset
+{
+	double Peak_LorentzianPeakC_Offset_model(double x_in)
+	{
+		double temp;
+		temp = 0.0;
+
+		// coefficients
+		double a = 5.8254080255880831E+02;
+		double b = 3.6511026553872156E+01;
+		double c = 1.2434983425309071E+01;
+		double Offset = 3.6521655358953700E+00;
+
+		temp = a/ (b + Math.Pow(x_in-c, 2.0));
+		temp += Offset;
+		return temp;
+	}
+}
+</textarea><br><br>
+
+<b>VBA</b><br><textarea rows="20" cols="85" wrap="OFF">' To the best of my knowledge this code is correct.
+' If you find any errors or problems please contact
+' me directly using zunzun@zunzun.com.
+'
+'      James
+
+' Fitting target: lowest sum of squared absolute error
+' Fitting target value = 0.00679309502824
+
+Public Function Peak_LorentzianPeakC_Offset_model(x_in)
+	temp = 0.0
+
+	' coefficients
+	Const a = 5.8254080255880831E+02
+	Const b = 3.6511026553872156E+01
+	Const c = 1.2434983425309071E+01
+	Const Offset = 3.6521655358953700E+00
+
+	temp = a/ (b + Application.WorksheetFunction.power(x_in-c, 2.0))
+	temp = temp + Offset
+	Peak_LorentzianPeakC_Offset_model = temp
+End Function
+</textarea><br><br>
+
+<b>PYTHON</b><br><textarea rows="20" cols="85" wrap="OFF"># To the best of my knowledge this code is correct.
+# If you find any errors or problems please contact
+# me directly using zunzun@zunzun.com.
+#
+#      James
+
+
+import math
+
+# Fitting target: lowest sum of squared absolute error
+# Fitting target value = 0.00679309502824
+
+def Peak_LorentzianPeakC_Offset_model(x_in):
+    temp = 0.0
+
+    # coefficients
+    a = 5.8254080255880831E+02
+    b = 3.6511026553872156E+01
+    c = 1.2434983425309071E+01
+    Offset = 3.6521655358953700E+00
+
+    temp = a/ (b + math.pow(x_in-c, 2.0))
+    temp += Offset
+    return temp
+</textarea><br><br>
+
+<b>JAVA</b><br><textarea rows="20" cols="85" wrap="OFF">// To the best of my knowledge this code is correct.
+// If you find any errors or problems please contact
+// me directly using zunzun@zunzun.com.
+//
+//      James
+
+
+import java.lang.Math;
+
+// Fitting target: lowest sum of squared absolute error
+// Fitting target value = 0.00679309502824
+
+class Peak_LorentzianPeakC_Offset
+{
+	double Peak_LorentzianPeakC_Offset_model(double x_in)
+	{
+		double temp;
+		temp = 0.0;
+
+		// coefficients
+		double a = 5.8254080255880831E+02;
+		double b = 3.6511026553872156E+01;
+		double c = 1.2434983425309071E+01;
+		double Offset = 3.6521655358953700E+00;
+
+		temp = a/ (b + Math.pow(x_in-c, 2.0));
+		temp += Offset;
+		return temp;
+	}
+}
+</textarea><br><br>
+
+<b>JAVASCRIPT</b><br><textarea rows="20" cols="85" wrap="OFF">// To the best of my knowledge this code is correct.
+// If you find any errors or problems please contact
+// me directly using zunzun@zunzun.com.
+//
+//      James
+
+
+// Fitting target: lowest sum of squared absolute error
+// Fitting target value = 0.00679309502824
+
+function Peak_LorentzianPeakC_Offset_model(x_in)
+	{
+	var temp;
+	temp = 0.0;
+
+	// coefficients
+	var a = 5.8254080255880831E+02;
+	var b = 3.6511026553872156E+01;
+	var c = 1.2434983425309071E+01;
+	var Offset = 3.6521655358953700E+00;
+
+	temp = a/ (b + Math.pow(x_in-c, 2.0));
+	temp += Offset;
+	return temp;
+}
+</textarea><br><br>
+
+<b>JULIA</b><br><textarea rows="20" cols="85" wrap="OFF"># To the best of my knowledge this code is correct.
+# If you find any errors or problems please contact
+# me directly using zunzun@zunzun.com.
+#
+#      James
+
+
+# julia has no power function, only an operator, create
+# a function for pyeq3 automated source code generation
+pow(x,y) = x ^ y
+
+# Fitting target: lowest sum of squared absolute error
+# Fitting target value = 0.00679309502824
+
+function Peak_LorentzianPeakC_Offset_model(x_in)
+	temp = 0.0
+
+	# coefficients
+	a = 5.8254080255880831E+02
+	b = 3.6511026553872156E+01
+	c = 1.2434983425309071E+01
+	Offset = 3.6521655358953700E+00
+
+	temp = a/ (b + pow(x_in-c, 2.0))
+	temp += Offset
+
+end
+</textarea><br><br>
+
+<b>FORTRAN90</b><br><textarea rows="20" cols="85" wrap="OFF">! To the best of my knowledge this code is correct.
+! If you find any errors or problems please contact
+! me directly using zunzun@zunzun.com.
+!
+!      James
+
+
+! fortran90 has no power function, only an operator, create
+! a function for pyeq3 automated source code generation
+real function pow(a, b)
+real :: a ! input
+real :: b ! input
+real :: c ! output
+c = a**b
+end function pow
+
+! Fitting target: lowest sum of squared absolute error
+! Fitting target value = 0.00679309502824
+
+real function Peak_LorentzianPeakC_Offset_model(x_in)
+real :: x_in ! input
+ real :: temp ! output
+
+! coefficients
+real :: a = 5.8254080255880831E+02
+real :: b = 3.6511026553872156E+01
+real :: c = 1.2434983425309071E+01
+real :: Offset = 3.6521655358953700E+00
+
+temp = 0.0
+
+temp = a/ (b + pow(x_in-c, 2.0))
+temp = temp + Offset
+
+end function Peak_LorentzianPeakC_Offset_model
+</textarea><br><br>
+
+<b>SCILAB</b><br><textarea rows="20" cols="85" wrap="OFF">// To the best of my knowledge this code is correct.
+// If you find any errors or problems please contact
+// me directly using zunzun@zunzun.com.
+//
+//      James
+
+
+// Fitting target: lowest sum of squared absolute error
+// Fitting target value = 0.00679309502824
+
+function y = Peak_LorentzianPeakC_Offset_model(x_in)
+	temp = 0.0;
+
+	// coefficients
+	a = 5.8254080255880831E+02;
+	b = 3.6511026553872156E+01;
+	c = 1.2434983425309071E+01;
+	Offset = 3.6521655358953700E+00;
+
+	temp = a/ (b + power(x_in-c, 2.0));
+	temp = temp + Offset;
+
+	y = temp;
+endfunction
+</textarea><br><br>
+
+<b>MATLAB</b><br><textarea rows="20" cols="85" wrap="OFF">% To the best of my knowledge this code is correct.
+% If you find any errors or problems please contact
+% me directly using zunzun@zunzun.com.
+%
+%      James
+
+
+% Fitting target: lowest sum of squared absolute error
+% Fitting target value = 0.00679309502824
+
+function y = Peak_LorentzianPeakC_Offset_model(x_in)
+	temp = 0.0;
+
+	% coefficients
+	a = 5.8254080255880831E+02;
+	b = 3.6511026553872156E+01;
+	c = 1.2434983425309071E+01;
+	Offset = 3.6521655358953700E+00;
+
+	temp = a./ (b + power(x_in-c, 2.0));
+	temp = temp + Offset;
+
+	y = temp;
+</textarea><br><br>
+
+</body></html>
