@@ -1,0 +1,49 @@
+Degress of freedom error 10
+Degress of freedom regression 2
+Root Mean Squared Error (RMSE): 0.7978480877344235
+R-squared: 0.9370910442809093
+R-squared adjusted: 0.9245092531370911
+Model F-statistic: 74.47993958645019
+Model F-statistic p-value: 9.852861545533997e-07
+Model log-likelihood: -15.51031907493641
+Model AIC: 2.8477413961440634
+Model BIC: 2.9781143247890336
+
+Individual Parameter Statistics:
+Coefficient a = 1.1656249763390174E-01, std error: 7.34583E+00
+          t-stat: 4.30069E-02, p-stat: 9.66543E-01, 95 percent confidence intervals: [-5.92240E+00, 6.15553E+00]
+Coefficient b = -2.7223154559123541E+00, std error: 1.46472E-01
+          t-stat: -7.11315E+00, p-stat: 3.24408E-05, 95 percent confidence intervals: [-3.57506E+00, -1.86957E+00]
+Coefficient c = 3.4132906185330825E+00, std error: 7.02993E-01
+          t-stat: 4.07097E+00, p-stat: 2.24667E-03, 95 percent confidence intervals: [1.54512E+00, 5.28147E+00]
+
+Coefficient Covariance Matrix:
+[ 8.87680938 -0.93651668 -2.65570362]
+[-0.93651668  0.17699852  0.22167505]
+[-2.65570362  0.22167505  0.84950726]
+
+
+
+Absolute Error Statistics:
+max = 1.3277628640800483E+00
+min = -8.8251175635528478E-01
+mean = 1.1956247957501685E-16
+standard error of mean = 2.3031890411294881E-01
+median = -3.9964170265814580E-01
+variance = 6.3656157110147638E-01
+std. deviation = 7.9784808773442351E-01
+skew = 6.7936934080342959E-01
+kurtosis = -1.1132086090790037E+00
+
+
+
+Percent Error Statistics:
+max = 2.1109107537043697E+03
+min = -2.8016246233501101E+03
+mean = -1.2140791724011413E+02
+standard error of mean = 4.5008638115053492E+02
+median = -6.0708142588203824E+00
+variance = 2.4309330059662154E+06
+std. deviation = 1.5591449598950751E+03
+skew = -2.8418910719515861E-01
+kurtosis = -7.5232437090872395E-01
