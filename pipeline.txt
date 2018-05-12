@@ -1,0 +1,3 @@
+1) 3 D All equation
+2) Only one algo (no offsets)
+3) Options for Algos

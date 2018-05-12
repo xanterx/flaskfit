@@ -1,0 +1,53 @@
+Degress of freedom error 4
+Degress of freedom regression 3
+Root Mean Squared Error (RMSE): 0.0291399533035
+R-squared: 0.999881069422
+R-squared adjusted: 0.999791871489
+Model F-statistic: 11209.6887683
+Model F-statistic p-value: 2.65198528693e-08
+Model log-likelihood: 16.93365238
+Model AIC: -3.233413095
+Model BIC: -3.19369232416
+
+Individual Parameter Statistics:
+Coefficient a = 5.8254080255880831E+02, std error: 9.83866E+04
+          t-stat: 1.85720E+00, p-stat: 1.36844E-01, 95 percent confidence intervals: [-2.88337E+02, 1.45342E+03]
+Coefficient b = 3.6511026553872156E+01, std error: 1.75214E+02
+          t-stat: 2.75829E+00, p-stat: 5.09390E-02, 95 percent confidence intervals: [-2.40336E-01, 7.32624E+01]
+Coefficient c = 1.2434983425309071E+01, std error: 1.01084E+00
+          t-stat: 1.23681E+01, p-stat: 2.45607E-04, 95 percent confidence intervals: [9.64353E+00, 1.52264E+01]
+Coefficient Offset = 3.6521655358953700E+00, std error: 2.32619E+00
+          t-stat: 2.39457E+00, p-stat: 7.47957E-02, 95 percent confidence intervals: [-5.82431E-01, 7.88676E+00]
+
+Coefficient Covariance Matrix:
+[ 57933308.96297298   2443964.49191854    183735.86384391
+   -280275.89310213]
+[ 2443964.49191854   103171.80295425     7724.39889081   -11848.81594833]
+[ 183735.86384391    7724.39889081     595.21597487    -876.01151854]
+[-280275.89310213  -11848.81594833    -876.01151854    1369.74016591]
+
+
+
+Absolute Error Statistics:
+max = 5.2782747951823694E-02
+min = -6.0471938682312043E-02
+mean = -1.5526862018333532E-09
+standard error of mean = 1.1013867093868590E-02
+median = 1.4949221023821124E-03
+variance = 8.4913687852980946E-04
+std. deviation = 2.9139953303493976E-02
+skew = -3.7013397691132033E-01
+kurtosis = 6.7386420629190713E-01
+
+
+
+Percent Error Statistics:
+max = 3.0859885378755669E-01
+min = -3.5430008602245161E-01
+mean = 3.4627474525035506E-04
+standard error of mean = 6.5572117720731293E-02
+median = 1.4197757061550017E-02
+variance = 3.0097918356670115E-02
+std. deviation = 1.7348751642890653E-01
+skew = -3.7180602089685411E-01
+kurtosis = 4.5343397525475870E-01
