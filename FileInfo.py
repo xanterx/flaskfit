@@ -24,6 +24,7 @@ sourceCodeFileName_3D = 'sourceCode_3D.html'
 sourceCodeFilePath_3D = os.path.join(absStaticDirPath, sourceCodeFileName_3D)
 sourceCodeURL_3D = staticDirName + '/' + sourceCodeFileName_3D
 
+# For all 2d equation wrapper for image
 def modelPlot_2D(cnt):
 	modelPlotFileName_2D = 'model_and_scatterplot_2D'+str(cnt)+'.png'
 	return os.path.join(absStaticDirPath, modelPlotFileName_2D)
@@ -31,6 +32,23 @@ def modelPlot_2D(cnt):
 def modelPlURL_2D(cnt):
 	modelPlotFileName_2D = 'model_and_scatterplot_2D'+str(cnt)+'.png'
 	return staticDirName + '/' + modelPlotFileName_2D
+
+# For all 3d equation wrapper for image
+def modelPlot_3D(cnt):
+	modelPlotFileName_3D = 'model_and_scatterplot_3D'+str(cnt)+'.png'
+	return os.path.join(absStaticDirPath, modelPlotFileName_3D)
+
+def modelPlURL_3D(cnt):
+	modelPlotFileName_3D = 'model_and_scatterplot_3D'+str(cnt)+'.png'
+	return staticDirName + '/' + modelPlotFileName_3D
+
+def contourPlot_3D(cnt):
+	contourPlotFileName_3D = 'contour_and_scatterplot_3D'+str(cnt)+'.png'
+	return os.path.join(absStaticDirPath, contourPlotFileName_3D)
+
+def contourPlURL_3D(cnt):
+	contourPlotFileName_3D = 'contour_and_scatterplot_3D'+str(cnt)+'.png'
+	return staticDirName + '/' + contourPlotFileName_3D
 
 # model and scatterplot, contour
 modelPlotFileName_2D = 'model_and_scatterplot_2D.png'

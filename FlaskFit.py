@@ -304,7 +304,7 @@ def fitter_2D():
                                 ra = str(equation.r2adj)
 
                             equaCoff = ''
-                            for i in range(len(equation.solvedCoefficients)):                            
+                            for i in range(len(equation.solvedCoefficients)):
                                 if type(equation.sd_beta) != type(None):
                                     equaCoff += "| %s = %-.16E, std error: %-.5E |" % (equation.GetCoefficientDesignators()[i], equation.solvedCoefficients[i], equation.sd_beta[i])
                                 else:
@@ -385,8 +385,9 @@ def fitter_3D():
                                     equaCoff += "| %s = %-.16E, std error: n/a |" % (equation.GetCoefficientDesignators()[i], equation.solvedCoefficients[i])
                             
                             # create graph
-                            GraphUtils.SaveModelScatterConfidence( FileInfo.modelPlot_2D(count) ,
-                                                                  equation, "Model with 95% Confidence Intervals", "X data", "Y data")         
+                            GraphUtils.SurfaceAndContourPlots(FileInfo.modelPlot_3D(count) ,
+                                                              FileInfo.contourPlot_3D(count),
+                                                                  equation, "Surface Plot", "Contour Plot", "X data","Y data","Z data")
 
                         except:
                             r = 'error solving'
@@ -396,7 +397,7 @@ def fitter_3D():
                         htmlToReturn += '<td nowrap>' + r + '</td>'
                         htmlToReturn += '<td nowrap>' + ra + '</td>'
                         htmlToReturn += '<td nowrap>' + equaCoff + '</td>'
-                        htmlToReturn += '<td nowrap><a href="' + FileInfo.modelPlURL_2D(count)  + '">Link</a></td>'
+                        htmlToReturn += '<td nowrap><a href="' + FileInfo.modelPlURL_3D(count)  + '">Model Link</a> <br /> <a href="' + FileInfo.contourPlURL_3D(count)  + '">Contour Link</a> </td>'
                         htmlToReturn += '</tr>'
                         count += 1
                         
